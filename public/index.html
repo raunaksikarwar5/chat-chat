@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoveLink Chat</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="brand-wrap">
+          <div class="brand-icon">❤</div>
+          <div>
+            <p class="eyebrow">Couple room</p>
+            <h1>LoveLink</h1>
+          </div>
+        </div>
+
+        <form id="join-form" class="join-form">
+          <label>
+            Your name
+            <input id="username" type="text" maxlength="20" placeholder="Ava" value="Ava" />
+          </label>
+
+          <label>
+            Room name
+            <input id="room" type="text" maxlength="25" placeholder="Our love room" value="Our love room" />
+          </label>
+
+          <button type="submit">Join chat</button>
+        </form>
+
+        <div class="online-box">
+          <div class="box-header">
+            <span>Online now</span>
+            <span id="online-count" class="badge">0</span>
+          </div>
+          <ul id="users" class="user-list"></ul>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <header class="chat-header">
+          <div>
+            <p class="eyebrow">Private chat</p>
+            <h2 id="room-title">Our love room</h2>
+          </div>
+          <div class="status-pill">Live now</div>
+        </header>
+
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <div id="typing-indicator" class="typing-indicator">Nobody is typing…</div>
+
+        <form id="message-form" class="message-form">
+          <input
+            id="message-input"
+            type="text"
+            maxlength="500"
+            placeholder="Send a sweet message…"
+            autocomplete="off"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+  </body>
+</html>
